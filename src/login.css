@@ -1,10 +1,17 @@
-* {
+/* Every rule below is scoped under .login-page so it always wins over any
+   other stylesheet in the app that happens to reuse the same class names
+   (register-page, input-wrapper, register-button, etc). This is what was
+   causing the mail/lock icons to render above the fields instead of
+   overlapping them — some other CSS with equal specificity, loaded after
+   this file, was resetting position on .input-wrapper / the icon. */
+
+.login-page,
+.login-page * {
   box-sizing: border-box;
 }
 
-/* CHANGED: page now has padding + gap so both cards float as equal-height cards,
-   and the flat black (#061522) is replaced by a navy-teal gradient */
-.register-page {
+/* Page shell */
+.login-page.register-page {
   width: 100%;
   min-height: 100vh;
 
@@ -17,15 +24,13 @@
   color: white;
 
   font-family: Arial, Helvetica, sans-serif;
-} 
+}
 
 /* =========================
    LEFT HERO SECTION
 ========================= */
 
-/* CHANGED: width accounts for the gap, min-height accounts for the page padding,
-   rounded corners so it reads as a card */
-.register-hero {
+.login-page .register-hero {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -34,7 +39,7 @@
   overflow: hidden;
 }
 
-.hero-overlay {
+.login-page .hero-overlay {
   position: absolute;
   inset: 0;
   background:
@@ -51,7 +56,7 @@
     );
 }
 
-.hero-content {
+.login-page .hero-content {
   position: relative;
   z-index: 2;
   width: 55%;
@@ -64,10 +69,9 @@
   padding: 72px 89px;
 }
 
-
 /* BRAND */
 
-.brand {
+.login-page .brand {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -77,9 +81,8 @@
   letter-spacing: -0.5px;
 }
 
-/* CHANGED: one shared logo style for the left brand icon and the right card logo */
-.brand-icon,
-.card-logo {
+.login-page .brand-icon,
+.login-page .card-logo {
   width: 46px;
   height: 46px;
   display: flex;
@@ -93,27 +96,24 @@
   box-shadow: 0 8px 30px rgba(20, 205, 200, 0.25);
 }
 
-.card-logo {
-  margin: 0 auto 14px;     /* was 20px – slightly tighter for the taller card */
-  font-size: 0;            /* hides the "R" */
+.login-page .card-logo {
+  margin: 0 auto 14px;
+  font-size: 0;
 }
 
-.card-logo::before {
-  content: "\2302";        /* same house icon as the left logo */
+.login-page .card-logo::before {
+  content: "\2302";
   font-size: 23px;
 }
 
-
 /* HERO TEXT */
 
-/* CHANGED: margin-bottom 55px -> 95px so "Find Your Perfect Space" sits higher */
-.hero-text {
-  margin-top: auto;
-  margin-bottom: 95px; 
-  margin-top: 10px; 
-} 
+.login-page .hero-text {
+  margin-top: 10px;
+  margin-bottom: 95px;
+}
 
-.hero-small-title {
+.login-page .hero-small-title {
   color: #35d8ca;
   font-size: 13px;
   font-weight: 700;
@@ -121,7 +121,7 @@
   margin-bottom: 18px;
 }
 
-.hero-text h1 {
+.login-page .hero-text h1 {
   margin: 0;
 
   font-size: clamp(48px, 5vw, 76px);
@@ -131,7 +131,7 @@
   font-weight: 700;
 }
 
-.hero-description {
+.login-page .hero-description {
   max-width: 510px;
 
   margin-top: 25px;
@@ -142,17 +142,16 @@
   line-height: 1.7;
 }
 
-
 /* FEATURES */
 
-.hero-features {
+.login-page .hero-features {
   display: flex;
   gap: 28px;
 
   max-width: 700px;
 }
 
-.feature {
+.login-page .feature {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -160,7 +159,7 @@
   flex: 1;
 }
 
-.feature-icon {
+.login-page .feature-icon {
   width: 38px;
   height: 38px;
 
@@ -178,14 +177,14 @@
   color: #35d8ca;
 }
 
-.feature h3 {
+.login-page .feature h3 {
   margin: 0 0 5px;
 
   font-size: 14px;
   font-weight: 600;
 }
 
-.feature p {
+.login-page .feature p {
   margin: 0;
 
   color: rgba(255, 255, 255, 0.7);
@@ -194,10 +193,9 @@
   line-height: 1.5;
 }
 
-
 /* HERO BOTTOM */
 
-.hero-bottom {
+.login-page .hero-bottom {
   margin-top: 45px;
 
   color: rgba(255, 255, 255, 0.7);
@@ -205,19 +203,16 @@
   font-size: 13px;
 }
 
-.hero-bottom strong {
+.login-page .hero-bottom strong {
   color: white;
   margin-left: 5px;
 }
-
 
 /* =========================
    RIGHT SECTION
 ========================= */
 
-/* CHANGED: black background removed (transparent), padding removed so the card
-   can stretch to the full height of the left card */
-.register-form-section {
+.login-page .register-form-section {
   width: calc(45% - 12px);
   min-height: calc(100vh - 48px);
 
@@ -236,32 +231,9 @@
   background: transparent;
 }
 
-
-/* TOP LOGIN */
-
-/* CHANGED: repositioned so it sits inside the card corner */
-.register-top {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  z-index: 3;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  color: rgba(255, 255, 255, 0.5);
-
-  font-size: 13px;
-}
-
-
 /* CARD */
 
-/* CHANGED: card now stretches to full height (flex: 1), content is vertically
-   centered, extra bottom padding leaves room for the copyright line.
-   Top/bottom padding trimmed a little (42/70 -> 32/60) for the taller form. */
-.register-card {
+.login-page .register-card {
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
@@ -290,24 +262,21 @@
   backdrop-filter: blur(20px);
 }
 
-
 /* CARD HEADER */
 
-.card-header {
+.login-page .card-header {
   text-align: center;
-  margin-bottom: 24px;     /* was 35px */
+  margin-bottom: 24px;
 }
 
-/* (.card-logo is now defined together with .brand-icon above) */
-
-.card-header h2 {
+.login-page .card-header h2 {
   margin: 0;
 
   font-size: 29px;
   letter-spacing: -0.8px;
 }
 
-.card-header p {
+.login-page .card-header p {
   margin-top: 10px;
 
   color: rgba(255, 255, 255, 0.5);
@@ -316,11 +285,10 @@
   line-height: 1.5;
 }
 
+/* STATUS MESSAGES */
 
-/* STATUS MESSAGES (OTP sent / errors / success) */
-
-.success-message,
-.error-message {
+.login-page .success-message,
+.login-page .error-message {
   margin: 0 0 16px;
   padding: 10px 14px;
   border-radius: 10px;
@@ -328,58 +296,64 @@
   line-height: 1.4;
 }
 
-.success-message {
+.login-page .success-message {
   color: #5eead4;
   background: rgba(32, 214, 197, 0.1);
   border: 1px solid rgba(32, 214, 197, 0.3);
 }
 
-.error-message {
+.login-page .error-message {
   color: #fca5a5;
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-
 /* FORM */
 
-.register-form {
+.login-page .register-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;               /* was 22px */
+  gap: 16px;
 }
 
-.form-group {
+.login-page .form-group {
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
 
-.form-group label {
+.login-page .form-group label {
   font-size: 13px;
   font-weight: 600;
 
   color: rgba(255, 255, 255, 0.8);
 }
 
-.input-wrapper {
+/* input-wrapper MUST stay position:relative — this is what the icon and the
+   password-toggle button are absolutely positioned against. */
+.login-page .input-wrapper {
   position: relative;
-}
+  display: block;
+} 
 
-.input-icon {
-  position: absolute;
 
+/* Mail / Lock icons from lucide-react. Explicit width/height as a fallback
+   in case the size prop is ever dropped, so a huge default SVG can never
+   blow out the layout again. */
+.login-page .input-wrapper > .input-icon-svg {
+  position: absolute !important;
   left: 17px;
   top: 50%;
-
   transform: translateY(-50%);
 
-  color: rgba(255, 255, 255, 0.4);
+  width: 18px;
+  height: 18px;
 
-  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
 }
 
-.input-wrapper input {
+.login-page .input-wrapper input {
   width: 100%;
 
   height: 52px;
@@ -401,11 +375,11 @@
   transition: 0.25s ease;
 }
 
-.input-wrapper input::placeholder {
+.login-page .input-wrapper input::placeholder {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.input-wrapper input:focus {
+.login-page .input-wrapper input:focus {
   border-color: #27d4c4;
 
   background: rgba(255, 255, 255, 0.07);
@@ -414,22 +388,40 @@
     0 0 0 3px rgba(39, 212, 196, 0.08);
 }
 
-/* locked / disabled fields (email + password after/before verification) */
-.input-wrapper input:disabled {
+.login-page .input-wrapper input:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
+/* Stop Chrome/Edge autofill from painting the field white/black */
+.login-page .input-wrapper input:-webkit-autofill,
+.login-page .input-wrapper input:-webkit-autofill:hover,
+.login-page .input-wrapper input:-webkit-autofill:focus,
+.login-page .input-wrapper input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px rgba(19, 46, 68, 0.9) inset;
+  box-shadow: 0 0 0 1000px rgba(19, 46, 68, 0.9) inset;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* password / new-password / confirm-password fields all carry the toggle
+   button on the right, so they need extra right padding */
+.login-page #login-password,
+.login-page #new-password,
+.login-page #confirm-password {
+  padding-right: 64px;
+}
 
 /* OTP BOXES */
 
-.otp-boxes {
+.login-page .otp-boxes {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.otp-box {
+.login-page .otp-box {
   width: 100%;
   max-width: 52px;
   height: 50px;
@@ -450,61 +442,60 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.otp-box:focus {
+.login-page .otp-box:focus {
   border-color: #27d4c4;
   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 0 0 3px rgba(39, 212, 196, 0.12);
 }
 
-.otp-box.filled {
+.login-page .otp-box.filled {
   border-color: rgba(39, 212, 196, 0.6);
 }
 
-.otp-box.error {
+.login-page .otp-box.error {
   border-color: #ef4444;
-  animation: otp-shake 0.35s;
+  animation: login-otp-shake 0.35s;
 }
 
-.otp-box.verified {
+.login-page .otp-box.verified {
   border-color: #22c55e;
   background: rgba(34, 197, 94, 0.1);
   cursor: not-allowed;
   opacity: 1;
 }
 
-@keyframes otp-shake {
+@keyframes login-otp-shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-4px); }
   75% { transform: translateX(4px); }
 }
 
-
 /* OTP MESSAGES / TIMER */
 
-.otp-hint {
+.login-page .otp-hint {
   margin: 0;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.otp-error {
+.login-page .otp-error {
   margin: 0;
   font-size: 13px;
   color: #ef4444;
 }
 
-.otp-timer {
+.login-page .otp-timer {
   margin: 4px 0 0;
   font-size: 13px;
   text-align: center;
   color: #ef4444;
 }
 
-.otp-timer.expired {
+.login-page .otp-timer.expired {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.otp-verified {
+.login-page .otp-verified {
   margin: 4px 0 0;
   font-size: 13px;
   font-weight: 600;
@@ -512,7 +503,7 @@
   color: #22c55e;
 }
 
-.resend-button {
+.login-page .resend-button {
   padding: 0;
 
   border: none;
@@ -525,24 +516,19 @@
   cursor: pointer;
 }
 
-.resend-button:hover {
+.login-page .resend-button:hover {
   color: #62e6da;
 }
 
-.resend-button:disabled {
+.login-page .resend-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
+/* PASSWORD SHOW/HIDE TOGGLE */
 
-/* PASSWORD */
-
-.input-wrapper input.password-input {
-  padding-right: 64px;
-}
-
-.password-toggle {
-  position: absolute;
+.login-page .password-toggle {
+  position: absolute !important;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
@@ -556,118 +542,24 @@
   font-size: 13px;
   font-weight: 600;
 
+  display: flex;
+  align-items: center;
+
   cursor: pointer;
 }
 
-.password-toggle:hover {
+.login-page .password-toggle:hover {
   color: white;
 }
 
-.password-toggle:disabled {
+.login-page .password-toggle:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
 
-.strength-bar {
-  flex: 1;
-  height: 4px;
-
-  overflow: hidden;
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.strength-fill {
-  display: block;
-  height: 100%;
-
-  border-radius: 999px;
-
-  transition: width 0.25s ease, background 0.25s ease;
-}
-
-.strength-fill.level-1,
-.strength-fill.level-2 { background: #ef4444; }
-.strength-fill.level-3 { background: #f59e0b; }
-.strength-fill.level-4 { background: #84cc16; }
-.strength-fill.level-5 { background: #22c55e; }
-
-.strength-label {
-  min-width: 58px;
-
-  text-align: right;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.strength-label.level-1,
-.strength-label.level-2 { color: #ef4444; }
-.strength-label.level-3 { color: #f59e0b; }
-.strength-label.level-4 { color: #84cc16; }
-.strength-label.level-5 { color: #22c55e; }
-
-/* PASSWORD POPUP (floats above the field, so the card never grows) */
-
-.password-popover {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(100% + 10px);
-  z-index: 10;
-
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  padding: 12px 14px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(39, 212, 196, 0.35);
-
-  background: #0b3550;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
-
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
-  line-height: 1.5;
-
-  pointer-events: none;
-}
-
-.password-popover strong {
-  color: white;
-  font-size: 13px;
-}
-
-.password-popover::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  bottom: -6px;
-
-  width: 10px;
-  height: 10px;
-
-  background: #0b3550;
-  border-right: 1px solid rgba(39, 212, 196, 0.35);
-  border-bottom: 1px solid rgba(39, 212, 196, 0.35);
-
-  transform: rotate(45deg);
-}
-
-.strength-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  margin-top: 6px;
-}
-
-
 /* BUTTON */
 
-.register-button {
+.login-page .register-button {
   width: 100%;
   height: 54px;
 
@@ -701,43 +593,37 @@
   transition: 0.25s ease;
 }
 
-.register-button:hover {
+.login-page .register-button:hover {
   transform: translateY(-2px);
 
   box-shadow:
     0 16px 35px rgba(20, 190, 190, 0.3);
 }
 
-.register-button span {
-  font-size: 20px;
-}
-
-/* locked until email verified + strong password */
-.register-button:disabled {
+.login-page .register-button:disabled {
   opacity: 0.45;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-
 /* DIVIDER */
 
-.divider {
+.login-page .divider {
   display: flex;
   align-items: center;
 
   gap: 14px;
 
-  margin: 20px 0;          /* was 28px */
+  margin: 20px 0;
 
   color: rgba(255, 255, 255, 0.25);
 
   font-size: 11px;
 }
 
-.divider::before,
-.divider::after {
+.login-page .divider::before,
+.login-page .divider::after {
   content: "";
 
   flex: 1;
@@ -747,10 +633,9 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* LOGIN / LINK TEXT */
 
-/* LOGIN */
-
-.login-text {
+.login-page .login-text {
   margin: 0;
 
   text-align: center;
@@ -760,8 +645,7 @@
   font-size: 13px;
 }
 
-.login-link,
-.login-link-inline {
+.login-page .login-link-inline {
   border: none;
 
   background: none;
@@ -773,17 +657,13 @@
   cursor: pointer;
 }
 
-.login-link:hover,
-.login-link-inline:hover {
+.login-page .login-link-inline:hover {
   color: #62e6da;
 }
 
-
 /* COPYRIGHT */
 
-/* CHANGED: centered inside the card's bottom padding so it no longer
-   overlaps the card border */
-.copyright {
+.login-page .copyright {
   position: absolute;
 
   left: 0;
@@ -797,50 +677,79 @@
   font-size: 11px;
 }
 
+/* =========================
+   LOGIN-PAGE-ONLY ADDITIONS
+========================= */
+
+/* "Forgot Password?" row under the password field */
+.login-page .login-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.login-page .login-text-button {
+  padding: 0;
+
+  border: none;
+  background: none;
+
+  color: #32d5c6;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.login-page .login-text-button:hover {
+  color: #62e6da;
+}
+
+/* "Back to Login" link (used on the reset-password screen) */
+.login-page .login-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-/* Desktop: the left hero is pinned to the screen, so "Find Your Perfect Space"
-   and the photo never move when the OTP / password sections make the card taller.
-   (Very short screens keep the original scrolling behaviour.) */
 @media (min-width: 1001px) and (min-height: 561px) {
 
-  .register-hero {
+  .login-page .register-hero {
     position: fixed;
   }
 
 }
 
-/* On short laptop screens tighten the hero spacing a little so all of it fits */
 @media (min-width: 1001px) and (min-height: 561px) and (max-height: 760px) {
 
-  .hero-content {
+  .login-page .hero-content {
     padding-top: 40px;
     padding-bottom: 32px;
   }
 
-  .hero-text {
+  .login-page .hero-text {
     margin-bottom: 48px;
   }
 
-  .hero-bottom {
+  .login-page .hero-bottom {
     margin-top: 24px;
   }
 
 }
 
-
 @media (max-width: 1000px) {
 
-  .register-page {
+  .login-page.register-page {
     flex-direction: column;
     padding: 16px;
     gap: 16px;
   }
 
-  .register-hero {
+  .login-page .register-hero {
     position: relative;
     inset: auto;
     width: 100%;
@@ -848,70 +757,63 @@
     border-radius: 24px;
   }
 
-  .register-form-section {
+  .login-page .register-form-section {
     width: 100%;
     min-height: 650px;
   }
 
-  .hero-content {
+  .login-page .hero-content {
     width: 100%;
     min-height: 520px;
     padding: 40px;
   }
 
-  .hero-text {
+  .login-page .hero-text {
     margin-bottom: 55px;
   }
 
-  .hero-features {
+  .login-page .hero-features {
     gap: 15px;
   }
 
 }
 
-
 @media (max-width: 600px) {
 
-  .register-hero {
+  .login-page .register-hero {
     min-height: 500px;
   }
 
-  .hero-content {
+  .login-page .hero-content {
     min-height: 500px;
     padding: 30px;
   }
 
-  .hero-text h1 {
+  .login-page .hero-text h1 {
     font-size: 48px;
   }
 
-  .hero-features {
+  .login-page .hero-features {
     flex-direction: column;
   }
 
-  .register-form-section {
+  .login-page .register-form-section {
     padding: 0;
   }
 
-  .register-top {
-    top: 20px;
-    right: 20px;
-  }
-
-  .register-card {
+  .login-page .register-card {
     padding: 60px 22px 60px;
   }
 
 }
 
-
 @media (max-width: 480px) {
 
-  .otp-boxes {
+  .login-page .otp-boxes {
     gap: 6px;
   }
 
-  .otp-box {
+  .login-page .otp-box {
     height: 46px;
     font-size: 18px;
   }
