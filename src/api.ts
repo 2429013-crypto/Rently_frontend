@@ -273,4 +273,101 @@ export async function logoutUser() {
   }
 
   return data;
+}
+
+// =============================================================
+// PROFILE - PROFILE DATA TYPE
+// =============================================================
+
+export interface UserProfile {
+  id?: number;
+  userId?: number;
+  fullName: string;
+  phone: string;
+  city: string;
+  address: string;
+  profilePicture?: string | null;
+  bio?: string | null;
+  isProfileComplete?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+// =============================================================
+// PROFILE - GET CURRENT USER PROFILE
+// =============================================================
+
+export async function getUserProfile() {
+  const response = await fetch(
+    `${API_BASE_URL}/api/profile/me`,
+    {
+      method: "GET",
+      credentials: "include",
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not fetch your profile");
+  }
+
+  return data;
+}
+
+// =============================================================
+// PROFILE - CREATE OR UPDATE PROFILE
+// =============================================================
+
+export async function updateUserProfile(
+  profile: UserProfile
+) {
+  const response = await fetch(
+    `${API_BASE_URL}/api/profile/me`,
+    {
+      method: "PUT",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: profile.fullName,
+        phone: profile.phone,
+        city: profile.city,
+        address: profile.address,
+        bio: profile.bio ?? "",
+        profilePicture: profile.profilePicture ?? null,
+      }),
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not save your profile");
+  }
+
+  return data;
+}
+
+// =============================================================
+// PROFILE - DELETE PROFILE
+// =============================================================
+
+export async function deleteUserProfile() {
+  const response = await fetch(
+    `${API_BASE_URL}/api/profile/me`,
+    {
+      method: "DELETE",
+      credentials: "include",
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not delete your profile");
+  }
+
+  return data;
 } 
