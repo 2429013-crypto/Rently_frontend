@@ -1,6 +1,6 @@
 import "./Login.css";
 import { useEffect, useRef, useState } from "react";
-import { loginUser, forgotPassword, verifyResetOTP, resetPassword } from "./api";
+import { loginUser, getUserProfile, forgotPassword, verifyResetOTP, resetPassword } from "./api";
 import rentlyBg from "./assets/images/rently-bg.jpg";
 import { Eye, EyeOff, Mail, Lock, ArrowRight, ArrowLeft } from "lucide-react";
 
@@ -104,7 +104,20 @@ export default function Login({ onGoToRegister }: Props) {
     try {
       await loginUser(email.trim(), password);
       setMessage("Login successful. Redirecting...");
-      setTimeout(() => { window.location.href = "/dashboard"; }, 500);
+
+      let destination = "/dashboard";
+      try {
+        const profile = await getUserProfile();
+        const isProfileComplete = Boolean(
+          profile.isProfileComplete ??
+          (profile.fullName && profile.phone && profile.city && profile.address)
+        );
+        if (!isProfileComplete) destination = "/profile-setup";
+      } catch {
+        // If we can't tell, don't block login — just go to the dashboard.
+      }
+
+      setTimeout(() => { window.location.href = destination; }, 500);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed. Check your details.");
     } finally { setBusy(false); }
@@ -245,4 +258,4 @@ export default function Login({ onGoToRegister }: Props) {
       </section>
     </div>
   );
-}
+} 
