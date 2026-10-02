@@ -4,7 +4,7 @@
 }
 
 /* =============================================
-   PAGE SHELL — mirrors register-page exactly
+   PAGE SHELL — RENTLY THEME
 ============================================= */
 
 .profile-page {
@@ -14,9 +14,9 @@
   display: flex;
   gap: 24px;
   padding: 24px;
-  background: linear-gradient(135deg, #04223a 0%, #063a52 100%);
+  background: linear-gradient(135deg, #071524 0%, #0d1f30 50%, #152d47 100%);
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* =============================================
@@ -36,8 +36,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(3,17,30,0.72) 0%, rgba(3,17,30,0.42) 45%, rgba(3,17,30,0.28) 100%),
-    linear-gradient(180deg, rgba(2,15,28,0), rgba(2,15,28,0.5));
+    linear-gradient(90deg, rgba(7, 21, 36, 0.85) 0%, rgba(7, 21, 36, 0.6) 45%, rgba(7, 21, 36, 0.35) 100%),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.2), rgba(7, 21, 36, 0.75));
 }
 
 .profile-hero-content {
@@ -58,8 +58,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 27px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
   letter-spacing: -0.5px;
 }
 
@@ -71,10 +71,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 13px;
-  background: linear-gradient(135deg, #20d6c7, #159fca);
+  background: linear-gradient(135deg, #087df5 0%, #025ccb 100%);
   color: white;
   font-size: 23px;
-  box-shadow: 0 8px 30px rgba(20, 205, 200, 0.25);
+  box-shadow: 0 8px 25px rgba(8, 125, 245, 0.38);
 }
 
 /* HERO TEXT */
@@ -85,7 +85,7 @@
 }
 
 .profile-hero-small-title {
-  color: #35d8ca;
+  color: #38bdf8;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -97,18 +97,18 @@
   font-size: clamp(48px, 5vw, 72px);
   line-height: 0.98;
   letter-spacing: -3px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .profile-hero-text h1 em {
   font-style: normal;
-  color: #35d8ca;
+  color: #38bdf8;
 }
 
 .profile-hero-description {
   max-width: 480px;
   margin-top: 25px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -136,20 +136,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background: rgba(40,211,198,0.12);
-  border: 1px solid rgba(40,211,198,0.3);
-  color: #35d8ca;
+  background: rgba(8, 125, 245, 0.15);
+  border: 1px solid rgba(8, 125, 245, 0.35);
+  color: #38bdf8;
 }
 
 .profile-feature h3 {
   margin: 0 0 5px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .profile-feature p {
   margin: 0;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 12px;
   line-height: 1.5;
 }
@@ -158,7 +158,7 @@
 
 .profile-hero-bottom {
   margin-top: 45px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
 }
 
@@ -199,9 +199,9 @@
   justify-content: center;
   padding: 36px 52px 52px;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(2,18,34,0.82), rgba(4,26,46,0.92));
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+  background: linear-gradient(145deg, rgba(13, 31, 48, 0.88), rgba(20, 44, 68, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(28px);
 }
 
@@ -213,31 +213,31 @@
 }
 
 .profile-card-logo {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   margin: 0 auto 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: linear-gradient(135deg, #20d6c7, #159fca);
+  background: linear-gradient(135deg, #087df5 0%, #025ccb 100%);
   color: white;
-  font-size: 24px;
-  box-shadow: 0 8px 30px rgba(20,205,200,0.3);
+  font-size: 26px;
+  box-shadow: 0 8px 25px rgba(8, 125, 245, 0.38);
 }
 
 .profile-card-header h2 {
   margin: 0;
   font-size: 26px;
   letter-spacing: -0.7px;
-  font-weight: 700;
+  font-weight: 800;
   color: white;
 }
 
 .profile-card-header p {
   margin-top: 7px;
-  color: rgba(255,255,255,0.45);
-  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -254,24 +254,24 @@
 
 .profile-progress-track {
   flex: 1;
-  height: 4px;
+  height: 5px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
 
 .profile-progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #20d6c7, #159fca);
+  background: linear-gradient(90deg, #087df5 0%, #38bdf8 100%);
   transition: width 0.3s ease;
 }
 
 .profile-progress-label {
   flex-shrink: 0;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #35d8ca;
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
   white-space: nowrap;
 }
 
@@ -286,9 +286,9 @@
   gap: 4px;
   margin-bottom: 22px;
   padding: 12px 16px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .profile-step {
@@ -297,7 +297,7 @@
   align-items: center;
   gap: 5px;
   flex: 1;
-  opacity: 0.35;
+  opacity: 0.4;
   transition: opacity 0.2s ease;
 }
 
@@ -307,39 +307,39 @@
 }
 
 .profile-step-dot {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
   transition: 0.2s ease;
 }
 
 .profile-step.done .profile-step-dot {
-  background: linear-gradient(135deg, #20d6c7, #159fca);
+  background: linear-gradient(135deg, #087df5, #025ccb);
   border-color: transparent;
   color: white;
-  box-shadow: 0 4px 12px rgba(20,190,190,0.35);
+  box-shadow: 0 4px 14px rgba(8, 125, 245, 0.35);
 }
 
 .profile-step.active .profile-step-dot {
-  background: rgba(32,214,197,0.15);
-  border-color: #27d4c4;
-  color: #35d8ca;
-  box-shadow: 0 0 0 3px rgba(39,212,196,0.12);
+  background: rgba(8, 125, 245, 0.2);
+  border-color: #087df5;
+  color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(8, 125, 245, 0.18);
 }
 
 .profile-step span {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.3px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .profile-step.done span,
@@ -354,9 +354,9 @@
 .profile-error,
 .profile-success {
   margin: 0 0 14px;
-  padding: 11px 15px;
-  border-radius: 10px;
-  font-size: 13px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13.5px;
   line-height: 1.45;
   display: flex;
   align-items: flex-start;
@@ -365,14 +365,14 @@
 
 .profile-error {
   color: #fca5a5;
-  background: rgba(239,68,68,0.1);
-  border: 1px solid rgba(239,68,68,0.25);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.28);
 }
 
 .profile-success {
-  color: #5eead4;
-  background: rgba(32,214,197,0.1);
-  border: 1px solid rgba(32,214,197,0.25);
+  color: #7dd3fc;
+  background: rgba(8, 125, 245, 0.15);
+  border: 1px solid rgba(8, 125, 245, 0.35);
 }
 
 /* =============================================
@@ -383,16 +383,16 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 18px 20px;
-  margin-bottom: 22px;
+  padding: 20px;
+  margin-bottom: 24px;
   border-radius: 16px;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   transition: border-color 0.2s ease;
 }
 
 .profile-photo-section:hover {
-  border-color: rgba(39,212,196,0.2);
+  border-color: rgba(8, 125, 245, 0.4);
 }
 
 .profile-avatar-wrap {
@@ -403,26 +403,26 @@
 }
 
 .profile-avatar-wrap:focus-visible .profile-avatar {
-  box-shadow: 0 0 0 3px rgba(39,212,196,0.4);
+  box-shadow: 0 0 0 4px rgba(8, 125, 245, 0.4);
 }
 
 .profile-avatar {
-  width: 80px;
-  height: 80px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(32,214,197,0.15), rgba(21,159,202,0.15));
-  border: 2px solid rgba(39,212,196,0.3);
-  color: rgba(255,255,255,0.5);
+  background: linear-gradient(135deg, rgba(8, 125, 245, 0.18), rgba(2, 92, 203, 0.18));
+  border: 2px solid rgba(8, 125, 245, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   transition: 0.25s ease;
 }
 
 .profile-avatar-wrap:hover .profile-avatar {
-  border-color: rgba(39,212,196,0.6);
-  box-shadow: 0 0 0 4px rgba(39,212,196,0.1);
+  border-color: #087df5;
+  box-shadow: 0 0 0 4px rgba(8, 125, 245, 0.15);
 }
 
 .profile-avatar img {
@@ -435,14 +435,14 @@
   position: absolute;
   right: -3px;
   bottom: -3px;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #20d6c7, #159fca);
-  border: 2.5px solid rgba(4,34,58,0.95);
+  background: linear-gradient(135deg, #087df5 0%, #025ccb 100%);
+  border: 2.5px solid #0d1f30;
   color: white;
   transition: transform 0.2s ease;
 }
@@ -454,20 +454,20 @@
 .profile-photo-meta {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .profile-photo-title {
   margin: 0;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 700;
   color: white;
 }
 
 .profile-photo-sub {
   margin: 0 0 10px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.5;
   max-width: 260px;
 }
@@ -477,26 +477,26 @@
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  border: 1px solid rgba(39,212,196,0.4);
-  border-radius: 9px;
-  background: rgba(39,212,196,0.08);
-  color: #35d8ca;
-  font-size: 12.5px;
+  border: 1px solid rgba(8, 125, 245, 0.45);
+  border-radius: 999px;
+  background: rgba(8, 125, 245, 0.12);
+  color: #38bdf8;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 .profile-upload-btn:hover {
-  background: rgba(39,212,196,0.15);
-  border-color: rgba(39,212,196,0.65);
+  background: rgba(8, 125, 245, 0.22);
+  border-color: #087df5;
 }
 
 .profile-photo-hint {
   display: block;
   margin-top: 6px;
-  font-size: 10.5px;
-  color: rgba(255,255,255,0.25);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.2px;
 }
 
@@ -507,15 +507,15 @@
 .profile-section-label {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 700;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #35d8ca;
-  margin: 18px 0 12px;
+  color: #38bdf8;
+  margin: 20px 0 14px;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(39,212,196,0.15);
+  border-bottom: 1px solid rgba(8, 125, 245, 0.2);
 }
 
 .profile-section-label:first-of-type {
@@ -534,7 +534,7 @@
 .profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 16px;
+  gap: 14px 18px;
 }
 
 .profile-field-full {
@@ -548,9 +548,9 @@
 }
 
 .profile-field label {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.2px;
 }
 
@@ -561,13 +561,13 @@
 
 .profile-field .optional {
   font-weight: 400;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 11.5px;
 }
 
 .profile-field-hint {
   font-size: 11px;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.1px;
 }
 
@@ -583,32 +583,33 @@
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.4);
   pointer-events: none;
 }
 
 .profile-input-wrapper input {
   width: 100%;
   height: 48px;
-  padding: 0 14px 0 40px;
+  padding: 0 14px 0 42px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   outline: none;
-  background: rgba(0,0,0,0.22);
+  background: rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 13.5px;
+  font-size: 14px;
   letter-spacing: 0.1px;
+  font-family: inherit;
   transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
 }
 
 .profile-input-wrapper input::placeholder {
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .profile-input-wrapper input:focus {
-  border-color: #27d4c4;
-  background: rgba(255,255,255,0.065);
-  box-shadow: 0 0 0 3px rgba(39,212,196,0.1);
+  border-color: #087df5;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(8, 125, 245, 0.18);
 }
 
 .profile-input-wrapper input:disabled {
@@ -621,8 +622,8 @@
 .profile-input-wrapper input:-webkit-autofill:hover,
 .profile-input-wrapper input:-webkit-autofill:focus {
   -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0 1000px rgba(19,46,68,0.92) inset;
-  box-shadow: 0 0 0 1000px rgba(19,46,68,0.92) inset;
+  -webkit-box-shadow: 0 0 0 1000px rgba(13, 31, 48, 0.95) inset;
+  box-shadow: 0 0 0 1000px rgba(13, 31, 48, 0.95) inset;
   caret-color: #ffffff;
   transition: background-color 9999s ease-in-out 0s;
 }
@@ -631,34 +632,34 @@
 
 .profile-field textarea {
   width: 100%;
-  min-height: 90px;
+  min-height: 95px;
   padding: 13px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   outline: none;
   resize: vertical;
-  background: rgba(0,0,0,0.22);
+  background: rgba(0, 0, 0, 0.25);
   color: white;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.65;
   transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
 }
 
 .profile-field textarea::placeholder {
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .profile-field textarea:focus {
-  border-color: #27d4c4;
-  background: rgba(255,255,255,0.065);
-  box-shadow: 0 0 0 3px rgba(39,212,196,0.1);
+  border-color: #087df5;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(8, 125, 245, 0.18);
 }
 
 .profile-char-count {
   align-self: flex-end;
   font-size: 11px;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.2px;
 }
 
@@ -667,9 +668,9 @@
 ============================================= */
 
 .profile-submit-wrap {
-  margin-top: 22px;
+  margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .profile-submit {
@@ -677,9 +678,9 @@
   height: 52px;
   border: none;
   border-radius: 13px;
-  background: linear-gradient(135deg, #20d6c5, #138fc2);
+  background: linear-gradient(135deg, #087df5 0%, #025ccb 100%);
   color: white;
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 700;
   letter-spacing: 0.2px;
   display: flex;
@@ -687,17 +688,18 @@
   justify-content: center;
   gap: 12px;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(20,190,190,0.22);
-  transition: 0.25s ease;
+  box-shadow: 0 12px 30px rgba(8, 125, 245, 0.3);
+  transition: all 0.25s ease;
 }
 
-.profile-submit:hover {
+.profile-submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 18px 38px rgba(20,190,190,0.32);
+  box-shadow: 0 16px 38px rgba(8, 125, 245, 0.4);
+  background: linear-gradient(135deg, #0984ff 0%, #0264dc 100%);
 }
 
 .profile-submit:disabled {
-  opacity: 0.45;
+  opacity: 0.5;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -706,8 +708,8 @@
 .profile-submit-hint {
   margin: 10px 0 0;
   text-align: center;
-  font-size: 11.5px;
-  color: rgba(255,255,255,0.25);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -716,7 +718,7 @@
 
 .profile-submit-hint::before {
   content: "🔒";
-  font-size: 10px;
+  font-size: 11px;
 }
 
 /* COPYRIGHT */
@@ -727,8 +729,8 @@
   right: 0;
   bottom: 22px;
   text-align: center;
-  color: rgba(255,255,255,0.22);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 11.5px;
 }
 
 /* =============================================

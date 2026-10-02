@@ -1,0 +1,341 @@
+/* ============================================================
+   PROPERTY DETAILS PAGE — RENTLY THEME
+============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.pd-root {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #102a43;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: 60px;
+}
+
+/* HEADER BANNER */
+.pd-header-banner {
+  background: linear-gradient(135deg, #0d1f30 0%, #1a365d 100%);
+  color: white;
+  padding: 30px 24px 60px;
+}
+
+.pd-header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pd-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pd-back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-3px);
+}
+
+/* MAIN CARD CONTAINER */
+.pd-content-container {
+  max-width: 1000px;
+  margin: -30px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.pd-main-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(13, 31, 48, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+/* HERO IMAGE */
+.pd-hero-img-wrap {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  background: #0f172a;
+}
+
+.pd-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-badge-row {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.pd-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  background: #087df5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pd-badge.available {
+  background: #10b981;
+}
+
+.pd-badge.unavailable {
+  background: #ef4444;
+}
+
+/* BODY CONTENT */
+.pd-body {
+  padding: 36px;
+}
+
+.pd-title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.pd-title-price-row h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0d1f30;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.pd-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.pd-price-box {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pd-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #087df5;
+}
+
+.pd-price small {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.pd-deposit {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* SPECS GRID */
+.pd-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.pd-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pd-spec-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pd-spec-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d1f30;
+}
+
+/* SECTION BLOCKS */
+.pd-section {
+  margin-bottom: 28px;
+}
+
+.pd-section-h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d1f30;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.pd-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #334155;
+  white-space: pre-line;
+}
+
+/* OWNER CONTROL PANEL */
+.pd-owner-panel {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 32px;
+}
+
+.pd-owner-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-owner-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pd-toggle-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.pd-toggle-btn.make-avail {
+  background: #10b981;
+  color: white;
+}
+
+.pd-toggle-btn.make-unavail {
+  background: #f59e0b;
+  color: white;
+}
+
+.pd-edit-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #087df5;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.pd-edit-btn:hover {
+  background: #0264dc;
+}
+
+.pd-delete-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.pd-delete-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* PUBLIC CONTACT CHIP */
+.pd-public-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 24px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pd-public-chip p {
+  margin: 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.pd-public-chip strong {
+  color: #0d1f30;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pd-title-price-row {
+    flex-direction: column;
+  }
+
+  .pd-price-box {
+    text-align: left;
+  }
+
+  .pd-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pd-hero-img-wrap {
+    height: 260px;
+  }
+
+  .pd-body {
+    padding: 24px 20px;
+  }
+}

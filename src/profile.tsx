@@ -12,7 +12,7 @@ import {
   User,
 } from "lucide-react";
 import profileBg from "./assets/images/rently-login-bg.webp";
-import { getCurrentUser, updateUserProfile } from "./api";
+import { getCurrentUser, getUserProfile, updateUserProfile } from "./api";
 
 const ABOUT_MAX_LENGTH = 300;
 const MAX_PHOTO_MB = 5;
@@ -41,19 +41,34 @@ export default function ProfileSetup({ onComplete }: Props) {
 
   useEffect(() => {
     let cancelled = false;
-    const loadCurrentUser = async () => {
+    const loadProfileData = async () => {
       try {
-        const data = await getCurrentUser();
-        if (!cancelled) setEmail(data.user?.email ?? data.email ?? "");
-      } catch {
-        // keep empty
+        setLoadingUser(true);
+        const userData = await getCurrentUser().catch(() => null);
+        if (!cancelled && userData) {
+          setEmail(userData.user?.email ?? userData.email ?? "");
+        }
+
+        const profileData = await getUserProfile();
+        const p = profileData?.profile;
+        if (!cancelled && p) {
+          if (p.fullName) setFullName(p.fullName);
+          if (p.phone) setPhone(p.phone);
+          if (p.city) setCity(p.city);
+          if (p.address) setAddress(p.address);
+          if (p.bio) setAbout(p.bio);
+          if (p.profilePicture) setPhotoPreview(p.profilePicture);
+        }
+      } catch (err) {
+        console.log("No profile found or error fetching profile:", err);
       } finally {
         if (!cancelled) setLoadingUser(false);
       }
     };
-    void loadCurrentUser();
+    void loadProfileData();
     return () => { cancelled = true; };
   }, []);
+
 
   useEffect(() => {
     return () => { if (photoPreview) URL.revokeObjectURL(photoPreview); };
